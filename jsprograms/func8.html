@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let text=prompt("enter the plain text ");
+    let key=parseInt(prompt("enter the key"));
+   
+function isUpperCase(txt) {
+    return txt === txt.toUpperCase();
+}
+
+
+let ceaserCipher = (txt, key) => {
+  let encrypt= '';
+  
+  for(let i = 0; i < txt.length; i++){
+    
+    
+    if(isUpperCase(txt[i])){
+      encrypt += String.fromCharCode((txt.charCodeAt(i) + key - 65) % 26 + 65);
+    }else{
+    
+      encrypt+= String.fromCharCode((txt.charCodeAt(i) + key - 97) % 26 + 97);
+    }
+  }
+  
+  
+  return encrypt;
+}
+document.write(ceaserCipher(text,key))
+    </script>
+    
+</body>
+</html>
